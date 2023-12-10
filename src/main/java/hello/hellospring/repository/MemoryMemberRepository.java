@@ -34,4 +34,8 @@ public class MemoryMemberRepository implements MembeRepository {
         return new ArrayList<>(store.values());
     }
 
+    public void clearStore() {
+        store.clear();
+    }
+
 }
