@@ -4,11 +4,14 @@ import java.util.List;
 import java.util.Optional;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MembeRepository;
-import hello.hellospring.repository.MemoryMemberRepository;
 
 public class MemberService {
 
-    private final MembeRepository membeRepository = new MemoryMemberRepository();
+    private final MembeRepository membeRepository;
+
+    public MemberService(MembeRepository membeRepository) {
+        this.membeRepository = membeRepository;
+    }
 
     /**
      * 회원 가입
